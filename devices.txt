@@ -1,0 +1,17 @@
+dF1, Firewall,
+R1, Router
+S1, Server
+F2, Firewall
+W1, WAP
+L1, Laptop
+L2, Laptop, Config:{Interface= FastEthernet0;MAC=13:E9:E0:36:00:3C;IPV4:10.10.1.2;Subnet=255.255.0.0;}
+SW1, Switch
+SW2, Switch
+PC1, PC, Config:{Interface=FastEthernet0;MAC=7D:C4:C5:FB:89:51;IPV4=10.0.0.2;Subnet=255.0.0.0;}
+PC2, PC, Config:{Interface=FastEthernet0;MAC=9F:0D:40:2B:39:38;IPV4=10.0.0.5;Subnet=255.0.0.0;}
+PC3, PC,
+PC4, PC, Config:{Interface=Ethernet;MAC=5D:57:91:46:E3:E7;IPV4:10.1.0.1;Subnet=255.0.0.0;}
+PC5, PC, Config:{Interface=FastEthernet0;MAC=F1:58:A8:2A:0E:66;IPV4:10.1.0.5;Subnet=255.255.0.0;}
+PC6, PC, Config:{Interface= Ethernet;MAC=C2:6E:5E:E5:AF:8C;IPV4:10.0.0.2;Subnet=255.0.0.0;}
+PC7, PC
+PC8, PC, Config:{Interface=FastEthernet0;MAC=B8:70:F5:9B:BB:0F;IPV4:10.10.0.2;Subnet=255.0.0.0;}
