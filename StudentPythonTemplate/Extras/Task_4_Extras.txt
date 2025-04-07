@@ -1,0 +1,10 @@
+*************************
+computeCosineSimilarity
+
+Assuming pre-read images red.jpg and gray.jpg are fed to the function, the expected result would be 0.5863706746 (it does not matter in which order the images are fed - the result should be always the same independently of that!)
+
+
+************************
+computeRMSEDistance
+
+Assuming pre-read images red.jpg and black.jpg are fed to the function, the expected result would be 147.2333748396 (it does not matter in which order the images are fed - the result should be always the same independently of that!)

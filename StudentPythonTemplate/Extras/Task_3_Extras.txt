@@ -1,0 +1,110 @@
+*************************
+partitionData
+
+	Using numpy.split or other functions that will determine split for you are not permitted, you need to implement this yourself. 
+	
+	If we assume the following training data as input (read as numpy array or ArrayList depending on the language)
+	
+	Path													ActualClass
+	..\Images/Student_Test/generated.photos_v3_0626369.jpg	Female	
+	..\Images/Student_Test/generated.photos_v3_0081097.jpg	Male	
+	..\Images/Student_Test/generated.photos_v3_0405408.jpg	Rodent	
+	..\Images/Student_Test/generated.photos_v3_0582035.jpg	Female	
+	..\Images/Student_Test/generated.photos_v3_0090463.jpg	Female	
+	..\Images/Student_Test/generated.photos_v3_0899088.jpg	Rodent	
+	..\Images/Student_Test/generated.photos_v3_0299741.jpg	Male	
+	..\Images/Student_Test/generated.photos_v3_0083465.jpg	Male	
+	..\Images/Student_Test/generated.photos_v3_0194016.jpg	Male	
+	..\Images/Student_Test/generated.photos_v3_0548166.jpg	Female	
+	..\Images/Student_Test/generated.photos_v3_0671601.jpg	Male	 
+	
+	Then a POSSIBLE (THERE ARE MANY OTHERS!) result for f=3 is (this is a list of numpy arrays) could be
+	[partition_1, partition_2, partition_3] 
+	where you can imagine that the partitions are numpy arrays (python) or ArrayLists (Java) representing the following entries:
+ 
+	partition_1:
+		..\Images/Student_Test/generated.photos_v3_0626369.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0582035.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0299741.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0548166.jpg	Female 
+	
+	partition_2:
+		..\Images/Student_Test/generated.photos_v3_0081097.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0090463.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0083465.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0671601.jpg	Male
+	
+	partition_3:
+		..\Images/Student_Test/generated.photos_v3_0405408.jpg	Rodent
+		..\Images/Student_Test/generated.photos_v3_0899088.jpg	Rodent
+		..\Images/Student_Test/generated.photos_v3_0194016.jpg	Male
+		
+	This is only one of many possible answers. Please pay attention to partition properties here rather than content!	
+
+*************************
+preparingDataForCrossValidation
+
+	Using numpy.split or other functions that will determine split for you are not permitted, you need to implement this yourself. 
+	
+	If we assume the [partition_1, partition_2, partition_3] and f=3 input (like above), then a POSSIBLE result is (these are lists of tuples)
+	[[0,new_train_0,new_test_0],
+	[1,new_train_1,new_test_1]
+	[2,new_train_2,new_test_2]]
+	
+	where you can imagine that the new_train/new_test datas are numpy arrays (python) or ArrayLists (Java) representing the following entries:
+	
+	new_train 0 is
+		Path	ActualClass
+		..\Images/Student_Test/generated.photos_v3_0081097.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0090463.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0083465.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0671601.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0405408.jpg	Rodent
+		..\Images/Student_Test/generated.photos_v3_0899088.jpg	Rodent
+		..\Images/Student_Test/generated.photos_v3_0194016.jpg	Male
+
+	new test_0 is
+		Path	ActualClass
+		..\Images/Student_Test/generated.photos_v3_0626369.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0582035.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0299741.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0548166.jpg	Female
+
+	new_train 1 is
+		Path	ActualClass
+		..\Images/Student_Test/generated.photos_v3_0626369.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0582035.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0299741.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0548166.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0405408.jpg	Rodent
+		..\Images/Student_Test/generated.photos_v3_0899088.jpg	Rodent
+		..\Images/Student_Test/generated.photos_v3_0194016.jpg	Male
+
+	new test_1 is
+		Path	ActualClass
+		..\Images/Student_Test/generated.photos_v3_0081097.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0090463.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0083465.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0671601.jpg	Male
+
+	
+	new_train 2 is
+		Path	ActualClass
+		..\Images/Student_Test/generated.photos_v3_0626369.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0582035.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0299741.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0548166.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0081097.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0090463.jpg	Female
+		..\Images/Student_Test/generated.photos_v3_0083465.jpg	Male
+		..\Images/Student_Test/generated.photos_v3_0671601.jpg	Male
+
+	new test_2 is
+		Path	ActualClass
+		..\Images/Student_Test/generated.photos_v3_0405408.jpg	Rodent
+		..\Images/Student_Test/generated.photos_v3_0899088.jpg	Rodent
+		..\Images/Student_Test/generated.photos_v3_0194016.jpg	Male
+
+**********************************************
+evaluateResults
+	Imagine a list of numpy arrays [classified_data_1, classified_data_2, classified_data_3]. Then, for example, average precision would then be (precision_1+precision_2+precision_3)/3, where precision_x is the precision calculated based on classified_data_x.

@@ -1,0 +1,36 @@
+Before running, make sure you are using requested Python version and files are where they should be, and that you read the README file. It is suggested that you modify the .csv files from relative paths to absolute paths appropriate for your machine. 
+
+
+******************************
+getMostCommonClass 
+	
+	Example input: (PYTHON) {'Female': 2, 'Male': 5, 'Primate': 1, 'Rodent': 3, 'Food': 0}
+				   (JAVA)	Map<String, Integer> input1 = new HashMap<>();
+							input1.put("Female",2);
+							input1.put("Male",5);
+							input1.put("Primate",1);
+							input1.put("Rodent",3);
+							input1.put("Food",0);
+	Expected output: Male
+	
+getClassesOfKNearestNeighbours
+
+	Example input: (PYTHON)	[[0.5, 'Female'], [0.2, 'Male'], [1, 'Male'], [3, 'Primate'], [2, 'Female']] 
+				   (JAVA)	List<Pair<Float, String>> measures_classes = new ArrayList<>();
+							measures_classes.add(new Pair<Float,String>(Float.valueOf(0.5), "Female"));
+							measures_classes.add(new Pair<Float,String>(Float.valueOf(0.2), "Male"));
+							measures_classes.add(new Pair<Float,String>(Float.valueOf(1), "Male"));
+							measures_classes.add(new Pair<Float,String>(Float.valueOf(3), "Primate"));
+							measures_classes.add(new Pair<Float,String>(Float.valueOf(2), "Female"));
+						(there should be as many entries as training images, this is just a sample)
+	k=3
+	similarity_flag = False
+	
+	Expected output: (PYTHON){'Female': 1, 'Male': 2, 'Primate': 0, 'Rodent': 0, 'Food': 0}
+					 (JAVA)	Map<String, Integer> output = new HashMap<>();
+							output.put("Female",1);
+							output.put("Male",2);
+							output.put("Primate",0);
+							output.put("Rodent",0);
+							output.put("Food",0);
+	
