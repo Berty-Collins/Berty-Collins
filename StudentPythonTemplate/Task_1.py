@@ -144,12 +144,6 @@ def getClassesOfKNearestNeighbours(measures_classes: list[tuple[float, str]], k:
 
     return class_counts
 
-import os
-
-import os
-
-import os
-
 def kNN(training_data: numpy.typing.NDArray, data_to_classify: numpy.typing.NDArray, k: int, measure_func: Callable,
         similarity_flag: bool, most_common_class_func=getMostCommonClass,
         get_neighbour_classes_func=getClassesOfKNearestNeighbours,
